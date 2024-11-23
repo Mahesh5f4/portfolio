@@ -1,0 +1,180 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.button a {
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.button button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(90deg, #3498db, #8e44ad);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.button button:hover {
+    background: linear-gradient(90deg, #8e44ad, #3498db);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Ripple Effect */
+.button button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+    z-index: 1;
+}
+
+.button button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Text Styling on Button */
+.button button span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Focus Effect for Accessibility */
+.button button:focus {
+    outline: 2px solid #2980b9;
+    outline-offset: 4px;
+}
+
+
+/* Container for Sidebar and Main Section */
+.container {
+    display: flex;
+}
+
+
+/* Sidebar Styling */
+.sidebar {
+    width: 220px;
+    background-color: pink;
+    color: black;
+    height: 100vh;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.sidebar ul a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul a:hover {
+    background-color: white;
+    transform: translateX(10px);
+}
+
+
+/* Main Section Styling */
+.main {
+    margin-left: 220px;
+    padding: 2rem;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #3498db;
+}
+
+/* Info Container Styling */
+.infoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Dev Info Styling */
+.devinfo {
+    flex: 1 1 50%;
+    max-width: 600px;
+}
+
+.hello {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* Dev Pic Styling */
+.devpic {
+    flex: 1 1 40%;
+    max-width: 400px;
+}
+
+.devpic img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .infoContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .devinfo {
+        max-width: 100%;
+    }
+
+    .devpic {
+        max-width: 100%;
+    }
+}

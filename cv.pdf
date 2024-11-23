@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="container">
+    <div class="sidebar">
+        Mahesh
+        <nav>
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="intro.html"><li>My Intro</li></a>
+                <a href="services.html"><li>Services</li></a>
+                <a href="blog.html"><li>Blog</li></a>
+                <a href="contact.html"><li>Contact Me</li></a>
+              
+            </ul>
+        </nav>
+    
+    </div>
+    <div class="main">
+       <div class="infoContainer">
+        <div class="devinfo">
+            <div class="hello">Hi I am </div>
+            <div class="name">Mahesh</div>
+            <div class="about">Front end Devloper</div>
+            <div class="moreabout">I am Very passionate about building user friendly front end projects</div>
+            <div class="button">
+                <a href="/cv.txt" >
+                    <button> Download CV</button></a>
+                <a href="/contact.html"><button>Contact Me</button></a>
+            </div>
+        </div>
+        <div class="devpic"><img src="mahi.jpg" alt="Mahesh mahi"></div>
+       </div>
+
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.sidebar{
+    background-color:darkcyan;
+    font: bold;
+    width: 434px;;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100vh;
+}
+.sidebar nav{
+
+    padding: 45px;
+}
+.sidebar li{
+    list-style: none;
+    font-size: 30px;
+    padding:33px 0;
+    color: black;
+
+    
+}
+.sidebar nav li a{
+    text-decoration: none;
+    
+}
+.sidebar nav li a:hover{
+    color:red
+    background-color: aqua;
+    
+}
+.main{
+    /* background-color: yellow; */
+    width: 90vw;
+}
+.container{
+    display: flex;
+}
+.infoContainer{
+    /* background-color: violet; */
+    height: 58vh;
+    width: 80vw;
+    margin: auto;
+    margin: 144px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.devinfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'source Code pro',monospace;
+}
+.hello{ 
+    font-size: 65px;
+  
+}
+.name{
+    font-size: 50px;
+    font-weight: bolder;
+}
+.about{
+    font-size: 40px;
+}
+.moreabout{
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 23px;
+}
+.button{
+    margin-top: 34px;
+}
+.button button{
+    padding: 9px 14px;
+    border-radius: 22px;
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    font-size: 21px;
+    margin:0 3px;
+}
+.button button:hover{
+    background-color: aliceblue;
+    color: purple;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.devpic img{
+    
+    height: 58vh;
+    
+    
+    
+
+}
+.contactform{
+    padding-top: 144px;
+    padding: 0 34px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+
+
+}
+.contactform h1{
+font-family: Arial, Helvetica, sans-serif;
+padding: 12px 0;
+}
+.contactform div{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+#emailHelp{
+    font-size: 8px;
+    color: midnightblue;
+    margin: 0 5px;
+}
+.contactform form div input{
+    width: 16vw;
+    border-radius: 5px;
+    margin: 6px 0;
+    padding: 3px;
+}
+
+#form-check{
+    flex-direction: row;
+}
+#form-check input{
+width: 24px;
+margin: 3px 0;
+}
+.submit-button {
+    width: 100px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+    font-size: 14px; /* Text size */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}

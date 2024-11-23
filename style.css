@@ -1,0 +1,783 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Container for Sidebar and Main Section */
+.container {
+    display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 220px;
+    background-color:red;
+    color: black;
+    height: 100vh;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font: bolder;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.sidebar ul a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.sidebar ul a:hover {
+    background-color: black;
+    transform: translateX(10px);
+}
+
+/* Main Section Styling */
+.main {
+    margin-left: 220px;
+    padding: 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Keyframe for Main Section Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Info Container Styling */
+.infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Developer Info Styling */
+.devinfo {
+    flex: 1 1 50%;
+    max-width: 600px;
+    animation: slideIn 1.5s ease-out;
+}
+
+/* Keyframe for Sliding Effect */
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hello {
+    font-size: 2rem;
+    color: #3498db;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Text Glow Effect */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
+    }
+    to {
+        text-shadow: 0 0 20px #2980b9, 0 0 40px #3498db;
+    }
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #222;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #3498db, #8e44ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s infinite ease;
+}
+
+/* Gradient Text Animation */
+@keyframes gradientText {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+.about {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #555;
+    margin: 1rem 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.about:hover {
+    transform: scale(1.1);
+    color: #2ecc71;
+}
+
+.moreabout {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.button a {
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.button button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(90deg, #3498db, #8e44ad);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.button button:hover {
+    background: linear-gradient(90deg, #8e44ad, #3498db);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Ripple Effect */
+.button button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+    z-index: 1;
+}
+
+.button button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Text Styling on Button */
+.button button span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Focus Effect for Accessibility */
+.button button:focus {
+    outline: 2px solid #2980b9;
+    outline-offset: 4px;
+}
+
+/* Developer Picture Styling */
+.devpic {
+    flex: 1 1 40%;
+    max-width: 400px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.devpic img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .infoContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .devinfo {
+        max-width: 100%;
+    }
+
+    .devpic {
+        max-width: 100%;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main {
+        margin-left: 0;
+        padding: 2rem 1rem;
+    }
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .devinfo {
+        padding: 1rem;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .about {
+        font-size: 1rem;
+    }
+
+    .moreabout {
+        font-size: 0.9rem;
+    }
+
+    .devpic img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .button button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+.main {
+    margin-left: 220px;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+}
+
+.skills-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #3498db;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Skill cards side by side */
+    gap: 2rem; /* Add spacing between the cards */
+    padding: 1rem 2rem;
+}
+
+/* Skill Bar Styling */
+.skill-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-bar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill Logo */
+.skill-logo img {
+    width: 55px; /* Increase size by 5% */
+    height: 55px;
+    margin-bottom: 1rem;
+}
+
+/* Skill Name */
+.skill-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: 25px;
+    margin-top: 0.5rem;
+}
+
+.progress-bar {
+    height: 100%;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    transition: width 0.4s ease-in-out;
+    border-radius: 5px;
+}
+.contactform{
+    padding-top: 144px;
+    padding: 0 34px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+
+
+}
+.contactform h1{
+font-family: Arial, Helvetica, sans-serif;
+padding: 12px 0;
+}
+.contactform div{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+#emailHelp{
+    font-size: 8px;
+    color: midnightblue;
+    margin: 0 5px;
+}
+.contactform form div input{
+    width: 16vw;
+    border-radius: 5px;
+    margin: 6px 0;
+    padding: 3px;
+}
+
+#form-check{
+    flex-direction: row;
+}
+#form-check input{
+width: 24px;
+margin: 3px 0;
+}
+.submit-button {
+    width: 100px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+    font-size: 14px; /* Text size */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+/* Services Section Styling */
+.services {
+    margin-left: 250px; /* Offset for sidebar */
+    padding: 4rem 2rem;
+    background: #f7f7f7;
+    min-height: 100vh;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.services-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+/* Container for service cards */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Styling individual service cards */
+.service-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services {
+        margin-left: 0;
+        padding: 2rem;
+    }
+}
+
+/* Services Section Styling */
+.services {
+    margin-left: 250px; /* Space for sidebar */
+    padding: 4rem 2rem;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.services-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+/* Container for service cards */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Styling individual service cards */
+.service-card {
+    background: aqua;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services {
+        margin-left: 0;
+        padding: 2rem;
+    }
+    .sidebar {
+        width: 200px;
+    }
+}
+.main {
+    margin-left: 220px;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+}
+
+.projects-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #3498db;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+/* Project Card */
+.project-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1rem;
+    text-align: center;
+}
+
+.project-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #983;
+    margin-bottom: 1rem;
+}
+
+.project-button {
+    text-decoration: none;
+    color: white;
+    background: #9209;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+    background-color: #2980b9;
+}
+.social-buttons-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Social Button Styling */
+.social-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Animation on Hover */
+.social-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-button img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s;
+}
+
+/* Animate the logo on hover */
+.social-button:hover img {
+    transform: rotate(360deg);
+}
+
+/* Instagram Button */
+.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* GitHub Button */
+.github {
+    background-color: #333;
+}
+
+/* LinkedIn Button */
+.linkedin {
+    background-color: #0a66c2;
+}
+
+/* Button Text Styling */
+.social-button span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-buttons-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Social Buttons Container */
+.social-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Individual Social Button Styling */
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #444;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.social-button img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.social-button:hover {
+    transform: scale(1.1);
+    background-color: #555;
+}
+
+.social-button:hover img {
+    transform: rotate(360deg);
+}
+
+/* Instagram Button Colors */
+.social-button.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* GitHub Button Colors */
+.social-button.github {
+    background-color: #24292e;
+}
+
+/* LinkedIn Button Colors */
+.social-button.linkedin {
+    background-color: #0a66c2;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 10px;
+    }
+
+    .social-buttons {
+        gap: 10px;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+}
+
+
+

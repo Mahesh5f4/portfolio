@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.button a {
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.button button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(90deg, #3498db, #8e44ad);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.button button:hover {
+    background: linear-gradient(90deg, #8e44ad, #3498db);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Ripple Effect */
+.button button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+    z-index: 1;
+}
+
+.button button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Text Styling on Button */
+.button button span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Focus Effect for Accessibility */
+.button button:focus {
+    outline: 2px solid #2980b9;
+    outline-offset: 4px;
+}
+
+
+/* Container for Sidebar and Main Section */
+.container {
+    display: flex;
+}
+
+
+/* Sidebar Styling */
+.sidebar {
+    width: 220px;
+    background-color: red;
+    color: white;
+    height: 100vh;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.sidebar ul a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul a:hover {
+    background-color: black;
+    transform: translateX(10px);
+}
+
+.social-buttons-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Social Button Styling */
+.social-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Animation on Hover */
+.social-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-button img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s;
+}
+
+/* Animate the logo on hover */
+.social-button:hover img {
+    transform: rotate(360deg);
+}
+
+/* Instagram Button */
+.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* GitHub Button */
+.github {
+    background-color: #333;
+}
+
+/* LinkedIn Button */
+.linkedin {
+    background-color: #0a66c2;
+}
+
+/* Button Text Styling */
+.social-button span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-buttons-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Social Buttons Container */
+.social-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Individual Social Button Styling */
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #444;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.social-button img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.social-button:hover {
+    transform: scale(1.1);
+    background-color: #555;
+}
+
+.social-button:hover img {
+    transform: rotate(360deg);
+}
+
+/* Instagram Button Colors */
+.social-button.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* GitHub Button Colors */
+.social-button.github {
+    background-color: #24292e;
+}
+
+/* LinkedIn Button Colors */
+.social-button.linkedin {
+    background-color: #0a66c2;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 10px;
+    }
+
+    .social-buttons {
+        gap: 10px;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+}
+
